@@ -361,6 +361,7 @@ class LeRobotSO101DataConfig(DataConfigFactory):
     """Config for SO101 5-DOF + gripper robot arm datasets."""
 
     default_prompt: str = ""
+    action_sequence_keys: Sequence[str] = ("action",)
 
     @override
     def create(self, assets_dirs: pathlib.Path, model_config: _model.BaseModelConfig) -> DataConfig:
@@ -401,6 +402,7 @@ class LeRobotSO101DataConfig(DataConfigFactory):
             repack_transforms=repack_transform,
             data_transforms=data_transforms,
             model_transforms=model_transforms,
+            action_sequence_keys=self.action_sequence_keys,
         )
 
 
