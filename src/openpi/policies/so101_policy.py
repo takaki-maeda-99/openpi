@@ -49,8 +49,8 @@ class SO101Inputs(transforms.DataTransformFn):
             },
         }
 
-        if "action" in data:
-            inputs["actions"] = data["action"]
+        if "actions" in data:
+            inputs["actions"] = data["actions"]
         if "prompt" in data:
             inputs["prompt"] = data["prompt"]
 
